@@ -13,6 +13,6 @@ friends=("anith" "dinesh" "avinash" "nara" "sharu")
 
 echo "tell your friends name: ${friends}"  ## It prints starting index
 
-echo "tell your friends name: ${friends [@]}"  ## It prints all values 
+echo "tell your friends name: ${friends[$@]}"  ## It prints all values 
 
 echo "tell your friends name: ${friends [2]}"  ## It prints based on given index value
