@@ -9,11 +9,11 @@ if [ $user -ne 0 ]; then
   exit 1
 fi
 
-dnf install ngnix -y
+dnf install mysql -y
 
 if [ $? -ne 0 ]; then
-  echo " ngnix  not installed"
+  echo " mysql  not installed"
   exit 1
 else
-  echo "ngnix is successfully installed"
+  echo "mysql is successfully installed"
 fi  
