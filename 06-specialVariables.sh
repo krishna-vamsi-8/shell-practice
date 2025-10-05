@@ -9,15 +9,15 @@ echo "enter the required Names: $*"  ##  $*  is used to enter data at time of ex
 
 echo "show last executed script name: $0"
 
-echo "current directory : $pwd "
+echo "current directory : $PWD"
 
-echo "Who Am I: $user"
+echo "Who Am I: $USER"
 
-echo "Home Directory: $home"
+echo "Home Directory: $HOME"
 
 echo "Process ID of executed Script: $$" ## show PID of current executed Script 
 
-sleep 10
+sleep 10 &
 
 echo "PID of last executed script: $!" ## show PID of last executed Script if it is in background 
 
