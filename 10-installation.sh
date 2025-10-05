@@ -4,14 +4,16 @@
  # 1 --> failure
  user=$(id -u)
 
-if [ $user -eq 0 ]; then
-  echo "you are a root user"
+if [ $user -ne 0 ]; then
+  echo "you are not root user"
   exit 1
 fi
 
 dnf install ngnix -y
 
-if [ $? -eq 0 ]; then
-  echo " ngnix installed"
+if [ $? -ne 0 ]; then
+  echo " ngnix  not installed"
   exit 1
+else
+  echo "ngnix is successfully installed"
 fi  
