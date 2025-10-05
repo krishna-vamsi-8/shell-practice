@@ -8,8 +8,8 @@
 # -gt greater than
 
 #number is variable
- number=$1  
- ## pass value at time of execution
+ 
+ number=$1 
 
 if [ $number -gt 10 ]; then
   echo "value $number is greater than 10"
