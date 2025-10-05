@@ -2,6 +2,6 @@
 
 ## Date Format
 
-Date=date
+Date= $(date)
 
 echo "enter today $Date"
