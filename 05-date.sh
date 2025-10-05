@@ -1,5 +1,5 @@
 #!/bin/bash
 
 ## Date Format
- Date=$(date)
-echo "today date is: ${Date + %I %s }"
+ Date=$(date +%y-%I-%M-%s)
+echo "today date is: $Date"
