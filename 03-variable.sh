@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #variables 
 
 ## pass values when executing scripts
