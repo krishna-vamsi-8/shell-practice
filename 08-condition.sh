@@ -3,7 +3,7 @@
 
 ### Conditions
 
-if[10 -eq 100] then
+if [10 -eq 100] then
  echo "it is equal"
 else
  echo "Not equal "
