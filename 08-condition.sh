@@ -3,12 +3,12 @@
 
 ### Conditions
 
-#echo "tell the number"
-#read number
+echo "tell the number"
+read number
 
-if [ 10 -eq 10 ];
+if [ $((number % 2)) -eq 1 ];
 then
- echo "it is equal"
+ echo "Given $number is not even"
 else
- echo "Not equal"
+ echo "Given $number is odd"
 fi
