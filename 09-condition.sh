@@ -7,14 +7,14 @@
 # -eq equal
 # -gt greater than
 
-echo " To vote you age should be above 18"
-echo "tell us your age"
-read age
+#number is variable
+ number=$1  
+ ## pass value at time of execution
 
-if [ $age -gt 18 ]; then
-  echo "you can vote"
-elif [ $age -lt 18 ]; then
-  echo "you are not eligible to vote"
+if [ $number -gt 10 ]; then
+  echo "value $number is greater than 10"
+elif [ $number -lt 10 ]; then
+  echo "value $number is less than 10"
 else
-  echo "you are welcome"
+  echo "value $number is equal to 10"
 fi
