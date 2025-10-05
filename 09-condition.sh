@@ -13,7 +13,7 @@ read age
 
 if [ $age -gt 18 ]; then
   echo "you can vote"
-elif [ $age -lt 18]; then
+elif [ $age -lt 18 ]; then
   echo "you are not eligible to vote"
 else
   echo "you are welcome"
