@@ -1,12 +1,12 @@
 #!/bin/bash
-
+user=$(id -u)
 y="\e[33m"
 r="\e[31m"
 n="\e[0m"
-user=$(id -u)
-logfolder="/var/log/shellscipt"  ## path to create directory
+)
+logfolder="/var/log/shellscript"  ## path to create directory
 scriptname=$( echo $0 | cut -d "." -f1 ) ## $0 tells last executed script name
-logfile=$logfolder/$scriptname.log
+logfile="$logfolder/$scriptname.log"
 
 mkdir -p $logfolder
 echo "script start time $(date +%d-%m-%y)" | tee -a $logfile
