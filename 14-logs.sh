@@ -20,7 +20,7 @@ else
 fi  }
 ## installing Mysql
 dnf list installed mysql -y
-if [ $1 -ne 0 ]; then
+if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
 dnf install mysql
 validate $? "mysql"
 else
@@ -28,7 +28,7 @@ echo -e " $g Already installed $n "
 fi
 ## installing Nginx
 dnf list installed ngnix -y
-if [ $1 -ne 0 ]; then
+if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
 dnf install nginx
 validate $? "nginx"
 else
