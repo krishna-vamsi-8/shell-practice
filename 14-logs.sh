@@ -18,12 +18,10 @@ else
   echo -e "$2 is  $y successfully installed $n"
 fi  }
 
-checking(){ 
+dnf list installed $2
 if [ $1 -ne 0 ]; then
- echo -e "Already  $G $2 will install $n"
- exit 1
+ dnf install $@
+ validate $? $@
 else
- echo  -e " $r Already installed $2 $n"
-fi }
-dnf list installed $@
-checking $? $@
+echo -e " $g already installed $n" 
+fi
