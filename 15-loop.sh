@@ -5,12 +5,12 @@ r="\e[31m"
 n="\e[0m"
 
 logfolder=var/log/shellscipt  ## path to create directory
-scriptname=$(echo $0| cut -d "." -f1) ## $0 tells last executed script name
+scriptname=$( echo $0 | cut -d "." -f1 ) ## $0 tells last executed script name
 logfile=$logfolder/$scriptname.log
 
 
 mkdir -p $logfolder
-
+ echo "script start time $(date +%d-%m-%y)" | tee -a $logfile
 ## checking the user 
 user=$(id -u)
 if [ $user -ne 0 ]; then
@@ -20,10 +20,10 @@ fi
 ## validating installation
 validate(){ 
 if [ $1 -ne 0 ]; then
-  echo -e " $2  $r Not installed $n" &>> $logfile
+  echo -e " $2  $r Not installed $n" | tee -a $logfile
   exit 1
 else
-  echo -e "$2 is  $y successfully installed $n" &>> $logfile
+  echo -e "$2 is  $y successfully installed $n" | tee -a $logfile
 fi  }
 
 ## $@ input at time of executing script
