@@ -4,8 +4,8 @@ y="\e[33m"
 r="\e[31m"
 n="\e[0m"
 
-logfolder=var/log/shellscipt
-scriptname=$(echo $0| cut -d "." -f1)
+logfolder=var/log/shellscipt  ## path to create directory
+scriptname=$(echo $0| cut -d "." -f1) ## $0 tells last executed script name
 logfile=$logfolder/$scriptname.log
 
 
@@ -26,6 +26,9 @@ else
   echo -e "$2 is  $y successfully installed $n" &>> $logfile
 fi  }
 
+## $@ input at time of executing script
+## package is consider as variable
+
 for package in $@
 do 
 dnf list installed $package &>> $logfile
@@ -34,4 +37,5 @@ if [ $? -eq 0 ]; then
   validate $? $package
 else
   echo -e "$package already installed $y skipping... $n"  
+fi
 done
