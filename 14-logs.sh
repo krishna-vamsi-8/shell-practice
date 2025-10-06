@@ -25,7 +25,7 @@ validate $? $@
 checking(){
     if [ $1 -eq 1]; then
     echo "already $r NOt Installed $n  "
-    exit 1
+    exit 0
 }
 dnf list installed $@ 
 validate $? $@
