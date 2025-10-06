@@ -3,6 +3,7 @@
 y="\e[33m"
 r="\e[31m"
 n="\e[0m"
+2=$@
 
 user=$(id -u)
 if [ $user -ne 0 ]; then
@@ -18,11 +19,11 @@ else
   echo -e "$2 is  $y successfully installed $n"
 fi  }
 
-echo "dnf install $@ -y"
-validate $? $@
+echo "dnf install $2 -y"
+validate $? $2
 
 
-dnf list installed $@ 
+dnf list installed $2 
 if [ $1 -ne 0 ]; then
  echo "Already  $G $2 Installed $n"
 else
