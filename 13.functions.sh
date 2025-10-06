@@ -4,6 +4,7 @@
 
 y="\e[33m"
 r="\e[31m"
+N="\e[0m"
 
  user=$(id -u)
 
@@ -26,6 +27,7 @@ else
   echo -e "$2 is  $y successfully installed $N "
 fi  }
 
+## Can use $@ to get input at time of execution 
 dnf install $@ -y
 validate $? $@
 
