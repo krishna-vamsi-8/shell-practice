@@ -20,10 +20,10 @@ fi
 
 validate(){
 if [ $1 -ne 0 ]; then
-  echo " $2  $r Not installed $N "
+  echo -e " $2  $r Not installed $N "
   exit 1
 else
-  echo "$2 is  $y successfully installed $N "
+  echo -e "$2 is  $y successfully installed $N "
 fi  }
 
 dnf install $@ -y
