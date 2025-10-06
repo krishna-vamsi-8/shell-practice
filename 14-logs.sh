@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 y="\e[33m"
 r="\e[31m"
 n="\e[0m"
@@ -19,10 +18,13 @@ else
   echo -e "$2 is  $y successfully installed $n"
 fi  }
 
+echo "dnf install $@ -y"
+validate $? $@
+
+
 dnf list installed $@ 
 if [ $1 -ne 0 ]; then
- echo "dnf install $@ -y"
-validate $? $@
+ echo "Already  $G $2 Installed $n"
 else
- echo "will install $2"
+ echo " $r will install $2 $n"
 fi
