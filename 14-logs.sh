@@ -14,6 +14,7 @@ fi
 validate(){ #dnf list installed $2
 if [ $1 -ne 0 ]; then
    dnf list installed $2  
+   exit 0
   echo -e " $2  $r Not installed $n"
   exit 1
 else
