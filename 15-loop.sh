@@ -3,7 +3,6 @@ user=$(id -u)
 y="\e[33m"
 r="\e[31m"
 n="\e[0m"
-)
 logfolder="/var/log/shellscript"  ## path to create directory
 scriptname=$( echo $0 | cut -d "." -f1 ) ## $0 tells last executed script name
 logfile="$logfolder/$scriptname.log"
