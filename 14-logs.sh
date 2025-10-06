@@ -28,7 +28,7 @@ else
 fi
 
 ## installing Nginx
-dnf list installed ngnix -y
+dnf list installed ngnix
 if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
 dnf install nginx
 validate $? "nginx"
