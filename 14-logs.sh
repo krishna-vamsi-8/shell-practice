@@ -11,21 +11,23 @@ if [ $user -ne 0 ]; then
   exit 1
 fi
 ## validating installation
-validate(){
+validate(){ #dnf list installed $2
 if [ $1 -ne 0 ]; then
+   dnf list installed $2  
   echo -e " $2  $r Not installed $n"
   exit 1
 else
   echo -e "$2 is  $y successfully installed $n"
 fi  }
 ## installing Mysql
-dnf list installed $2
-if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
+#dnf list installed $2
+#if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
 dnf install $@ -y
 validate $? "$@"
-else
-echo -e " $y Already installed $n "
-fi
+#exit 0
+#else
+#echo -e " $y Already installed $n "
+#fi
 
 ## installing Nginx
 #dnf list installed ngnix -y
