@@ -18,15 +18,9 @@ if [ $1 -ne 0 ]; then
 else
   echo -e "$2 is  $y successfully installed $n"
 fi  }
+
+dnf list installed $@ 
+if [ $1 -ne 0 ]; then
 dnf install $@ -y
 validate $? $@
-
-
-checking(){
-    if [ $0 -ne 1 ]; then
-    echo "already $y Installed $n"
-    else
-    echo " $r Not Installed $n" 
-}
-dnf list installed $@ 
-validate $? $@
+fi
