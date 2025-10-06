@@ -21,6 +21,8 @@ fi  }
 
 dnf list installed $@ 
 if [ $1 -ne 0 ]; then
-dnf install $@ -y
+ echo "dnf install $@ -y"
 validate $? $@
+else
+ echo "will install $2"
 fi
