@@ -28,5 +28,5 @@ if [ $1 -ne 0 ]; then
 else
  echo  -e " $r will install $2 $n"
 fi }
-
+dnf list installed $@
 checking $? $@
