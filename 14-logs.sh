@@ -24,9 +24,9 @@ validate $? $@
 checking(){ 
             dnf list installed $@
 if [ $1 -ne 0 ]; then
- echo "Already  $G $2 Installed $n"
+ echo -e "Already  $G $2 Installed $n"
 else
- echo " $r will install $2 $n"
+ echo  -e " $r will install $2 $n"
 fi }
 
 checking $? $@
