@@ -2,6 +2,9 @@
 
 ## Functions
 
+y="\e[33m"
+r="\e[31m"
+
  user=$(id -u)
 
  ## In this process checking user root or not
@@ -17,12 +20,12 @@ fi
 
 validate(){
 if [ $1 -ne 0 ]; then
-  echo " $2  not installed"
+  echo " $2  $r Not installed $N "
   exit 1
 else
-  echo "$2 is successfully installed"
+  echo "$2 is  $y successfully installed $N "
 fi  }
 
 dnf install $@ -y
-validate $? "$@"
+validate $? $@
 
