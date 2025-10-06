@@ -13,28 +13,25 @@ fi
 ## validating installation
 validate(){ #dnf list installed $2
 if [ $1 -ne 0 ]; then
-   dnf list installed $2  
-   exit 0
   echo -e " $2  $r Not installed $n"
   exit 1
 else
   echo -e "$2 is  $y successfully installed $n"
 fi  }
 ## installing Mysql
-#dnf list installed $2
-#if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
-dnf install $@ -y
-validate $? "$@"
-#exit 0
-#else
-#echo -e " $y Already installed $n "
-#fi
+dnf list installed mysql
+if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
+  dnf install mysql -y
+  validate $? "mysql"
+else
+  echo -e " $y Already installed $n "
+fi
 
 ## installing Nginx
-#dnf list installed ngnix -y
-#if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
-#dnf install nginx
-#validate $? "nginx"
-#else
-#echo -e " $g Already installed $n "
-#fi
+dnf list installed ngnix -y
+if [ $? -ne 0 ]; then ## this validation is checking previoulsy installed
+dnf install nginx
+validate $? "nginx"
+else
+echo -e " $g Already installed $n "
+fi
